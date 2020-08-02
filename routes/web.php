@@ -17,6 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/links/submit', function () {
+    return view('submit');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/links', 'LinksController@index')->name('links');
+
+Route::post('/links/submit', 'LinksController@store')->name('links.submit');
